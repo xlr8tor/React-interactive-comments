@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--Very-light-gray);
     font-family: 'Rubik', sans-serif;
-    font-size: .9rem;
+    font-size: 1rem;
     line-height: 1.5;
   }
 

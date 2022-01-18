@@ -1,15 +1,24 @@
+import Vote from "../Vote/Vote";
+//Styles
 import { Wrapper, Content, Image, Section } from "./Post.styles";
-const Post = ({ content, createdAt, src, username }) => {
-  console.log(username);
+const Post = ({ content, createdAt, src, username, score, replyingTo }) => {
   return (
     <Wrapper>
+      <Vote score={score} />
       <Content>
         <Section>
           <Image src={src} />
           <p className="username">{username}</p>
-          <p className="bold">{createdAt}</p>
+          <p>{createdAt}</p>
+          <div className="reply">
+            <Image src={"./images/icon-reply.svg"} className="reply-icon" />
+            <p>Reply</p>
+          </div>
         </Section>
-        <p>{content}</p>
+        <p>
+          <span className="accent">@{replyingTo} </span>
+          {content}
+        </p>
       </Content>
     </Wrapper>
   );
