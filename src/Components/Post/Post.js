@@ -1,10 +1,26 @@
 import Vote from "../Vote/Vote";
 //Styles
 import { Wrapper, Content, Image, Section } from "./Post.styles";
-const Post = ({ content, createdAt, src, username, score, replyingTo }) => {
+const Post = ({
+  content,
+  createdAt,
+  src,
+  username,
+  score,
+  replyingTo,
+  onUpvote,
+  onDownvote,
+  id,
+}) => {
   return (
     <Wrapper>
-      <Vote score={score} />
+      <Vote
+        score={score}
+        className="vote-component"
+        onUpvote={onUpvote}
+        onDownvote={onDownvote}
+        id={id}
+      />
       <Content>
         <Section>
           <Image src={src} />
@@ -16,7 +32,7 @@ const Post = ({ content, createdAt, src, username, score, replyingTo }) => {
           </div>
         </Section>
         <p>
-          <span className="accent">@{replyingTo} </span>
+          <span className="accent">{replyingTo} </span>
           {content}
         </p>
       </Content>

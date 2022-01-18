@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100%;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -10,6 +11,18 @@ export const Wrapper = styled.div`
   padding: 1.5em;
   border-radius: 0.625rem;
   color: var(--Grayish-Blue);
+
+  @media (max-width: 425px) {
+    flex-flow: column-reverse nowrap;
+    padding: 1em;
+    font-size: 13px;
+
+    .reply {
+      position: absolute;
+      right: 1em;
+      bottom: 1em;
+    }
+  }
 `;
 
 export const Content = styled.div`

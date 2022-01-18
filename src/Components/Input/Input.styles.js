@@ -41,7 +41,7 @@ export const Image = styled.img`
 export const TextArea = styled.textarea`
   margin-inline: 1em;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: 1px solid var(--Light-gray);
   border-radius: 0.45rem;
   padding-block: 0.6em;

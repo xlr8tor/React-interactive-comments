@@ -5,29 +5,33 @@ import data from "../../data.json";
 
 import { Wrapper } from "./Container.styles";
 
-const Container = () => {
+const Container = ({ state, onUpvote, onDownvote }) => {
   return (
     <Wrapper>
-      {data.comments.map((comment) => {
+      {state.comments.map((comment) => {
         return (
           <>
             <Post
+              key={comment.id}
               content={comment.content}
               createdAt={comment.createdAt}
               src={comment.user.image.png}
               username={comment.user.username}
               score={comment.score}
-              key={comment.id}
+              onDownvote={onDownvote}
+              onUpvote={onUpvote}
+              id={comment.id}
             />
             {comment.replies.map((reply) => (
               <Post
-                replyingTo={reply.replyingTo}
+                replyingTo={"@" + reply.replyingTo}
                 content={reply.content}
                 score={reply.score}
                 src={reply.user.image.png}
                 username={reply.user.username}
                 createdAt={reply.createdAt}
                 key={reply.id}
+                $mode
               />
             ))}
           </>

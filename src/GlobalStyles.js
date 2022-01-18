@@ -38,6 +38,7 @@ const GlobalStyles = createGlobalStyle`
     display: block;
     max-width: 100%;
   }
+  
   input,
   textarea,
   button {
