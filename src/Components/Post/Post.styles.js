@@ -12,16 +12,34 @@ export const Wrapper = styled.div`
   color: var(--Grayish-Blue);
 `;
 
-export const Content = styled.div``;
+export const Content = styled.div`
+  .accent {
+    font-weight: 500;
+    color: var(--Moderate-blue);
+  }
+`;
 
 export const Section = styled.section`
   display: flex;
   align-items: center;
+  margin-block-end: 0.7em;
 
   .username {
     margin-inline: 1em;
     font-weight: 700;
     color: var(--Dark-blue);
+  }
+
+  .reply {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font-weight: 500;
+    color: var(--Moderate-blue);
+  }
+
+  .reply-icon {
+    transform: scale(0.5);
   }
 `;
 
