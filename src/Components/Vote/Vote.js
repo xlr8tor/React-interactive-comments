@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { stateContext } from "../../App";
 import { Content } from "./Vote.styles";
 
-const Vote = ({ score, onUpvote, onDownvote, id }) => {
+const Vote = ({ score, id, replyID }) => {
+  const { Upvote, Downvote } = useContext(stateContext);
+
   return (
     <Content>
       <img
@@ -8,7 +12,7 @@ const Vote = ({ score, onUpvote, onDownvote, id }) => {
         className="vote"
         alt="upvote"
         onClick={() => {
-          onUpvote(id);
+          Upvote(id, replyID);
         }}
       />
       <p className="count">{score}</p>
@@ -17,7 +21,7 @@ const Vote = ({ score, onUpvote, onDownvote, id }) => {
         className="vote"
         alt="downvote"
         onClick={() => {
-          onDownvote(id);
+          Downvote(id, replyID);
         }}
       />
     </Content>

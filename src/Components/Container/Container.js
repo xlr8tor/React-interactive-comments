@@ -1,25 +1,21 @@
 import Input from "../Input/Input";
 import Post from "../Post/Post";
 
-import data from "../../data.json";
-
 import { Wrapper } from "./Container.styles";
+import React from "react";
 
-const Container = ({ state, onUpvote, onDownvote }) => {
+const Container = ({ state }) => {
   return (
     <Wrapper>
       {state.comments.map((comment) => {
         return (
-          <>
+          <React.Fragment key={comment.id}>
             <Post
-              key={comment.id}
               content={comment.content}
               createdAt={comment.createdAt}
               src={comment.user.image.png}
               username={comment.user.username}
               score={comment.score}
-              onDownvote={onDownvote}
-              onUpvote={onUpvote}
               id={comment.id}
             />
             {comment.replies.map((reply) => (
@@ -30,11 +26,12 @@ const Container = ({ state, onUpvote, onDownvote }) => {
                 src={reply.user.image.png}
                 username={reply.user.username}
                 createdAt={reply.createdAt}
+                id={comment.id}
+                replyID={reply.id}
                 key={reply.id}
-                $mode
               />
             ))}
-          </>
+          </React.Fragment>
         );
       })}
       <Input />

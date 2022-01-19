@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   background: var(--White);
   padding: 1.5em;
   border-radius: 0.625rem;
+  margin-block-end: 1em;
 
   @media (max-width: 540px) {
     align-items: center;

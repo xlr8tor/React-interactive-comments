@@ -51,8 +51,14 @@ export const Section = styled.section`
     color: var(--Moderate-blue);
   }
 
+  .reply:hover {
+    cursor: pointer;
+    color: var(--Light-grayish-blue);
+  }
+
   .reply-icon {
     transform: scale(0.5);
+    mask: var(--Light-grayish-blue);
   }
 `;
 
